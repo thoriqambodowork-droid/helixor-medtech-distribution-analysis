@@ -59,9 +59,9 @@ Issues requiring confirmation include 10 exact duplicate pairs, invalid/ambiguou
 
 The audit identified 10 exact duplicate pairs (20 source rows involved), while 10 duplicate-flagged rows were excluded in the provisional OTD candidate population. This is not evidence that all source duplicates were included in the eligible population. Provisional Fill Rate applies separate quantity eligibility filters. These choices are **not** final approved company rules.
 
-**Reproducibility status:** The downloaded notebook was inspected: it had no saved error outputs and contained the expected provisional KPI values. The GitHub copy removes the superseded 23.00% OTD calculation and cached outputs, and adds assertions for the training dataset. The user reports a successful top-to-bottom execution of the cleaned copy in Google Colab without errors. This execution has not been independently witnessed or reproduced by this repository's CI. Google authentication and access to the source Sheet are required.
+**Reproducibility status:** The repository notebook now uses a local upload flow: upload `Raw_Data.csv` or an Excel workbook containing a `Raw_Data` sheet. Google Sheets authentication is not required, and the source dataset is not included in this repository. A successful top-to-bottom run was user-reported for an earlier notebook version; the latest upload-based version has not yet been independently run or reproduced by this repository's CI. Its assertions compare selected provisional results with the supplied training dataset; investigate differences if the input changes.
 
-**Work still pending:** Review publication rights and sensitive fields, test the notebook with the intended access model, and complete a final public-portfolio review before changing repository visibility. Grouped Fill Rate and damage comparisons have been calculated but remain provisional.
+**Work still pending:** Run and review the latest upload-based notebook in Google Colab, confirm publication rights and sensitive fields, and complete a final public-portfolio review before changing repository visibility. Grouped Fill Rate and damage comparisons have been calculated but remain provisional.
 
 ## Tools and analytical methods
 
@@ -90,7 +90,7 @@ The audit identified 10 exact duplicate pairs (20 source rows involved), while 1
 - [x] Order-month OTD and shipment-count pivots
 - [x] Technical report and updated client-ready management report
 - [x] Grouped Fill Rate and damaged-unit analyses by warehouse/route (provisional)
-- [x] Top-to-bottom clean notebook run — user-reported successful in Google Colab, without errors
+- [ ] Run the latest local-upload notebook from top to bottom in Google Colab
 - [x] Upload cleaned notebook (`analysis/HELIXOR_MEDTECH_Analysis.ipynb`)
 - [x] Upload Technical and Client-Ready PDF reports
 - [ ] Confirm publication rights and finalize public portfolio version
