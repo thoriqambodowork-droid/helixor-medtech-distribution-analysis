@@ -13,7 +13,7 @@ This project addresses four questions:
 1. Which records require cleaning, investigation, or operational confirmation?
 2. What proportion of eligible completed shipments arrived on time?
 3. How much of the eligible ordered quantity is recorded as delivered?
-4. Where and when are delivery performance gaps most apparent?
+4. Which warehouses and routes show the lowest fulfillment rates or highest recorded damage, and where do timeliness gaps appear?
 
 ## Dataset and approach
 
@@ -32,9 +32,15 @@ This project addresses four questions:
 | Quantity Fill Rate | **97.48%** | 108,864 units delivered / 111,679 ordered |
 | Quantity difference | **2,815 units (2.52%)** | Arithmetic difference on 487 eligible records |
 | Lowest named-warehouse OTD | **Madrid: 9.09%** | 5 on time / 55 eligible records |
+| Lowest named-warehouse Fill Rate | **Lyon: 95.35%** | 15,254 / 15,998 units |
+| Lowest route Fill Rate | **FRA-SE-03: 95.78%** | 13,705 / 14,309 units |
+| Recorded damaged units | **1,001** | 487 quantity-eligible records; 108,864 delivered units |
+| Recorded Damage Rate | **0.92%** | 1,001 damaged / 108,864 delivered units |
+| Highest named-warehouse Damage Rate | **Lyon: 1.00%** | 153 / 15,254 delivered units |
+| Highest route Damage Rate | **HAM-DE-03: 1.26%** | 132 / 10,488 delivered units |
 | Monthly pivot coverage | **474 records** | 476 OTD records less 2 ambiguous order months |
 
-**Important:** OTD and Quantity Fill Rate use **different eligibility rules and denominators**. The 2,815-unit difference does not establish physical losses or inventory shrinkage.
+**Important:** OTD and Quantity Fill Rate use **different eligibility rules and denominators**. The 2,815-unit difference does not establish physical losses or inventory shrinkage. Damaged units were aggregated only on the 487 quantity-eligible records, **not all 1,000 source rows**. Damage Rate means recorded damaged units divided by recorded delivered units.
 
 ## Main findings
 
@@ -42,15 +48,18 @@ This project addresses four questions:
 - Madrid had the lowest named-warehouse OTD (9.09%), while Milan had the largest **count** of late shipments (68).
 - Route `HAM-DK-02` showed the lowest route-level OTD (12.24%). Route codes should not be interpreted as verified physical origin/destination pairs.
 - In Madrid, the April and August **order-month cohorts** had 0/7 and 0/9 on-time deliveries, respectively. These figures do **not** mean that no shipments occurred.
+- Lyon had the lowest named-warehouse Quantity Fill Rate (95.35%), while `FRA-SE-03` had the lowest route-level rate (95.78%).
+- Milan recorded the largest absolute damaged-unit count by warehouse (197); Lyon had the highest named-warehouse damage proportion (1.00%). At route level, `HAM-DE-03` had both the most damaged units (132) and the highest Damage Rate (1.26%).
+- A route identifier can appear with multiple warehouses in this dataset. It does not prove which warehouse caused damage, and damaged-unit totals do not establish physical loss or root cause.
 - Shipment timing and unit fulfillment should be investigated separately; neither metric establishes a root cause.
 
 ## Data quality and reporting limitations
 
 Issues requiring confirmation include 10 exact duplicate pairs, invalid/ambiguous dates, missing or non-numeric quantities, unexpected status labels, ambiguous warehouse names, and business-rule exceptions.
 
-For provisional OTD, both copies of each exact-duplicate pair and delivery-before-dispatch anomalies were excluded from the eligible sample. Provisional Fill Rate also applies separate quantity eligibility filters. These choices are **not** final approved company rules.
+The audit identified 10 exact duplicate pairs (20 source rows involved), while 10 duplicate-flagged rows were excluded in the provisional OTD candidate population. This is not evidence that all source duplicates were included in the eligible population. Provisional Fill Rate applies separate quantity eligibility filters. These choices are **not** final approved company rules.
 
-**Work still pending:** Validate grouped Quantity Fill Rate and damaged-unit comparisons by warehouse/route; rerun the notebook from the original import through the final outputs; review the dataset for publication rights and sensitive fields before making this repository public.
+**Work still pending:** Rerun the notebook from the original import through the final outputs, independently verify that all calculations reproduce, and review data/reports for publication rights or sensitive fields before considering a public repository. Grouped Fill Rate and damage comparisons have been calculated but remain provisional.
 
 ## Tools and analytical methods
 
@@ -74,8 +83,8 @@ For provisional OTD, both copies of each exact-duplicate pair and delivery-befor
 - [x] Provisional OTD and Quantity Fill Rate calculations
 - [x] Warehouse and route OTD analysis
 - [x] Order-month OTD and shipment-count pivots
-- [x] Technical report and draft client-ready management report
-- [ ] Grouped Fill Rate and damaged-unit analyses by warehouse/route
+- [x] Technical report and updated client-ready management report
+- [x] Grouped Fill Rate and damaged-unit analyses by warehouse/route (provisional)
 - [ ] Top-to-bottom notebook reproducibility check
 - [ ] Upload reviewed notebook and supporting artifacts
 - [ ] Confirm publication rights and finalize public portfolio version
