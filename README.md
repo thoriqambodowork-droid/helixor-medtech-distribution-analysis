@@ -59,7 +59,9 @@ Issues requiring confirmation include 10 exact duplicate pairs, invalid/ambiguou
 
 The audit identified 10 exact duplicate pairs (20 source rows involved), while 10 duplicate-flagged rows were excluded in the provisional OTD candidate population. This is not evidence that all source duplicates were included in the eligible population. Provisional Fill Rate applies separate quantity eligibility filters. These choices are **not** final approved company rules.
 
-**Work still pending:** Rerun the notebook from the original import through the final outputs, independently verify that all calculations reproduce, and review data/reports for publication rights or sensitive fields before considering a public repository. Grouped Fill Rate and damage comparisons have been calculated but remain provisional.
+**Reproducibility status:** The downloaded notebook was inspected: it had no saved error outputs and contained the expected provisional KPI values. The GitHub copy removes the superseded 23.00% OTD calculation and cached outputs, and adds assertions for the training dataset. A fresh top-to-bottom execution of **that cleaned copy** in Colab is still required before calling Step 16 independently verified. Google authentication and access to the source Sheet are required.
+
+**Work still pending:** Complete that clean rerun, export approved reports, and review publication rights or sensitive fields before considering a public repository. Grouped Fill Rate and damage comparisons have been calculated but remain provisional.
 
 ## Tools and analytical methods
 
@@ -69,7 +71,8 @@ The audit identified 10 exact duplicate pairs (20 source rows involved), while 1
 
 ## Supporting work
 
-- [Analysis notebook (Google Colab)](https://colab.research.google.com/drive/1MDC0FdMTQ02K-_hl6eN-u_fJPI2TlXV6)
+- [Portfolio notebook (GitHub)](analysis/HELIXOR_MEDTECH_Analysis.ipynb) — cleaned source, without cached outputs
+- [Original working notebook (Google Colab)](https://colab.research.google.com/drive/1MDC0FdMTQ02K-_hl6eN-u_fJPI2TlXV6)
 - [Full technical report (Google Docs)](https://docs.google.com/document/d/1qdxnN2AF81fq0EMg8DhNVdsCub70UntLqm5gTTjE4y0/edit)
 - [Client-ready management report (Google Docs)](https://docs.google.com/document/d/1OLO-gvVqANnnAbInU6x6Hpj2X5kCxnUwjwy6gwGVqtk/edit)
 
@@ -86,7 +89,8 @@ The audit identified 10 exact duplicate pairs (20 source rows involved), while 1
 - [x] Technical report and updated client-ready management report
 - [x] Grouped Fill Rate and damaged-unit analyses by warehouse/route (provisional)
 - [ ] Top-to-bottom notebook reproducibility check
-- [ ] Upload reviewed notebook and supporting artifacts
+- [x] Upload cleaned notebook (`analysis/HELIXOR_MEDTECH_Analysis.ipynb`)
+- [ ] Upload approved supporting report exports
 - [ ] Confirm publication rights and finalize public portfolio version
 
 ## Author
