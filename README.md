@@ -59,9 +59,9 @@ Issues requiring confirmation include 10 exact duplicate pairs, invalid/ambiguou
 
 The audit identified 10 exact duplicate pairs (20 source rows involved), while 10 duplicate-flagged rows were excluded in the provisional OTD candidate population. This is not evidence that all source duplicates were included in the eligible population. Provisional Fill Rate applies separate quantity eligibility filters. These choices are **not** final approved company rules.
 
-**Reproducibility status:** The source dataset is included at `data/Raw_Data.csv`; the notebook uses a local upload flow and does not require Google Sheets authentication. The user reports that the workbook loaded in Colab with 1,000 rows and 21 columns. The latest full notebook run has not yet been independently reproduced by this repository's CI. Assertions compare selected provisional results with the supplied training dataset; investigate differences if the input changes.
+**Reproducibility status:** The source dataset is included at `data/Raw_Data.csv`; the notebook uses a local upload flow and does not require Google Sheets authentication. The user reports that the latest notebook ran from top to bottom in Colab and all final provisional cross-checks passed. This execution has not been independently reproduced by this repository's CI. Assertions compare selected provisional results with the supplied training dataset; investigate differences if the input changes.
 
-**Work still pending:** Run the latest notebook from top to bottom in Google Colab, confirm publication rights and sensitive fields before changing repository visibility, and complete a final public-portfolio review. Grouped Fill Rate and damage comparisons have been calculated but remain provisional.
+**Work still pending:** Confirm publication rights and sensitive fields before changing repository visibility, and complete a final public-portfolio review. Grouped Fill Rate and damage comparisons have been calculated but remain provisional.
 
 ## Tools and analytical methods
 
@@ -91,7 +91,7 @@ The audit identified 10 exact duplicate pairs (20 source rows involved), while 1
 - [x] Technical report and updated client-ready management report
 - [x] Grouped Fill Rate and damaged-unit analyses by warehouse/route (provisional)
 - [x] Include the `Raw_Data` export (`data/Raw_Data.csv`, 1,000 rows × 21 columns)
-- [ ] Run the latest local-upload notebook from top to bottom in Google Colab
+- [x] Run the latest local-upload notebook from top to bottom in Google Colab — user-reported successful; final provisional cross-checks passed
 - [x] Upload cleaned notebook (`analysis/HELIXOR_MEDTECH_Analysis.ipynb`)
 - [x] Upload Technical and Client-Ready PDF reports
 - [ ] Confirm publication rights and finalize public portfolio version
