@@ -59,9 +59,9 @@ Issues requiring confirmation include 10 exact duplicate pairs, invalid/ambiguou
 
 The audit identified 10 exact duplicate pairs (20 source rows involved), while 10 duplicate-flagged rows were excluded in the provisional OTD candidate population. This is not evidence that all source duplicates were included in the eligible population. Provisional Fill Rate applies separate quantity eligibility filters. These choices are **not** final approved company rules.
 
-**Reproducibility status:** The downloaded notebook was inspected: it had no saved error outputs and contained the expected provisional KPI values. The GitHub copy removes the superseded 23.00% OTD calculation and cached outputs, and adds assertions for the training dataset. A fresh top-to-bottom execution of **that cleaned copy** in Colab is still required before calling Step 16 independently verified. Google authentication and access to the source Sheet are required.
+**Reproducibility status:** The downloaded notebook was inspected: it had no saved error outputs and contained the expected provisional KPI values. The GitHub copy removes the superseded 23.00% OTD calculation and cached outputs, and adds assertions for the training dataset. The user reports a successful top-to-bottom execution of the cleaned copy in Google Colab without errors. This execution has not been independently witnessed or reproduced by this repository's CI. Google authentication and access to the source Sheet are required.
 
-**Work still pending:** Complete that clean rerun, export approved reports, and review publication rights or sensitive fields before considering a public repository. Grouped Fill Rate and damage comparisons have been calculated but remain provisional.
+**Work still pending:** Export approved reports, verify that shared documents are accessible when intended, and review publication rights or sensitive fields before considering a public repository. Grouped Fill Rate and damage comparisons have been calculated but remain provisional.
 
 ## Tools and analytical methods
 
@@ -88,7 +88,7 @@ The audit identified 10 exact duplicate pairs (20 source rows involved), while 1
 - [x] Order-month OTD and shipment-count pivots
 - [x] Technical report and updated client-ready management report
 - [x] Grouped Fill Rate and damaged-unit analyses by warehouse/route (provisional)
-- [ ] Top-to-bottom notebook reproducibility check
+- [x] Top-to-bottom clean notebook run — user-reported successful in Google Colab, without errors
 - [x] Upload cleaned notebook (`analysis/HELIXOR_MEDTECH_Analysis.ipynb`)
 - [ ] Upload approved supporting report exports
 - [ ] Confirm publication rights and finalize public portfolio version
