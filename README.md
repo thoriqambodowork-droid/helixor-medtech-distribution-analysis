@@ -61,7 +61,7 @@ The audit identified 10 exact duplicate pairs (20 source rows involved), while 1
 
 **Reproducibility status:** The downloaded notebook was inspected: it had no saved error outputs and contained the expected provisional KPI values. The GitHub copy removes the superseded 23.00% OTD calculation and cached outputs, and adds assertions for the training dataset. The user reports a successful top-to-bottom execution of the cleaned copy in Google Colab without errors. This execution has not been independently witnessed or reproduced by this repository's CI. Google authentication and access to the source Sheet are required.
 
-**Work still pending:** Export approved reports, verify that shared documents are accessible when intended, and review publication rights or sensitive fields before considering a public repository. Grouped Fill Rate and damage comparisons have been calculated but remain provisional.
+**Work still pending:** Review publication rights and sensitive fields, test the notebook with the intended access model, and complete a final public-portfolio review before changing repository visibility. Grouped Fill Rate and damage comparisons have been calculated but remain provisional.
 
 ## Tools and analytical methods
 
@@ -73,10 +73,12 @@ The audit identified 10 exact duplicate pairs (20 source rows involved), while 1
 
 - [Portfolio notebook (GitHub)](analysis/HELIXOR_MEDTECH_Analysis.ipynb) — cleaned source, without cached outputs
 - [Original working notebook (Google Colab)](https://colab.research.google.com/drive/1MDC0FdMTQ02K-_hl6eN-u_fJPI2TlXV6)
-- [Full technical report (Google Docs)](https://docs.google.com/document/d/1qdxnN2AF81fq0EMg8DhNVdsCub70UntLqm5gTTjE4y0/edit)
-- [Client-ready management report (Google Docs)](https://docs.google.com/document/d/1OLO-gvVqANnnAbInU6x6Hpj2X5kCxnUwjwy6gwGVqtk/edit)
+- [Technical Report (PDF)](reports/HELIXOR%20MEDTECH.pdf)
+- [Full technical report (editable Google Docs)](https://docs.google.com/document/d/1qdxnN2AF81fq0EMg8DhNVdsCub70UntLqm5gTTjE4y0/edit)
+- [Client-Ready Operations Report (PDF)](reports/HELIXOR%20MEDTECH%20%E2%80%94%20Client-Ready%20Operations%20Performance%20Report.pdf)
+- [Client-ready management report (editable Google Docs)](https://docs.google.com/document/d/1OLO-gvVqANnnAbInU6x6Hpj2X5kCxnUwjwy6gwGVqtk/edit)
 
-> External documents may require separate sharing permissions. Portable notebook and approved report exports will be organized in the repository after final review.
+> Portable notebook and both report PDF exports are now stored in this repository. Editable Google Docs may require separate sharing permissions.
 
 ## Project completion checklist
 
@@ -90,7 +92,7 @@ The audit identified 10 exact duplicate pairs (20 source rows involved), while 1
 - [x] Grouped Fill Rate and damaged-unit analyses by warehouse/route (provisional)
 - [x] Top-to-bottom clean notebook run — user-reported successful in Google Colab, without errors
 - [x] Upload cleaned notebook (`analysis/HELIXOR_MEDTECH_Analysis.ipynb`)
-- [ ] Upload approved supporting report exports
+- [x] Upload Technical and Client-Ready PDF reports
 - [ ] Confirm publication rights and finalize public portfolio version
 
 ## Author
